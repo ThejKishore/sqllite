@@ -1,0 +1,13 @@
+vaadin.launch-browser: true
+spring.application.name: vaadindemo
+
+
+spring.datasource:
+  url: jdbc:postgresql://localhost:5432/mydatabase
+  username: myuser
+  password: secret
+
+db:
+  fetch:
+    all-tables: SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'
+    columns-tables: SELECT column_name, data_type, is_nullable, character_maximum_length FROM information_schema.columns WHERE table_schema = 'public' AND table_name = 'users'
